@@ -84,6 +84,31 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onVideoEnd:)
+                                                 name:AVPlayerItemDidPlayToEndTimeNotification
+                                               object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:AVPlayerItemDidPlayToEndTimeNotification
+                                                  object:nil];
+}
+
+- (void)onVideoEnd:(NSNotification *)notification
+{
+    NSLog(@"video end");
+    AVPlayerItem *p = [notification object];
+    [p seekToTime:kCMTimeZero];
+    [self.player play];
+}
+
 - (IBAction)startPlaying:(id)sender {
     //    [self setupPlayer];
     // 現状は、アクションなし

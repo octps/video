@@ -55,7 +55,9 @@
 {
     // 1
     self.player = [AVPlayer playerWithURL:url];
-    
+    if (self.playerLayer) {
+        [self.playerLayer removeFromSuperlayer];
+    }
     // 2
     self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
     self.playerLayer.frame = self.previewView.bounds;

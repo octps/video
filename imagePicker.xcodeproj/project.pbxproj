@@ -17,6 +17,8 @@
 		B48D59BD1A84E8710082D1CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48D59BC1A84E8710082D1CF /* CoreGraphics.framework */; };
 		B48D59BF1A84E8810082D1CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48D59BE1A84E8810082D1CF /* UIKit.framework */; };
 		B48D59C11A84E88B0082D1CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48D59C01A84E88B0082D1CF /* Foundation.framework */; };
+		B4A3820B1A8A44B6007B2696 /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = B4A382091A8A44B6007B2696 /* me.png */; };
+		B4A3820C1A8A44B6007B2696 /* tracer.png in Resources */ = {isa = PBXBuildFile; fileRef = B4A3820A1A8A44B6007B2696 /* tracer.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		B48D59BC1A84E8710082D1CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B48D59BE1A84E8810082D1CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B48D59C01A84E88B0082D1CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B4A382091A8A44B6007B2696 /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
+		B4A3820A1A8A44B6007B2696 /* tracer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tracer.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				B4170B1C1A81B96C003BB40B /* Main.storyboard */,
 				B4170B1F1A81B96C003BB40B /* Images.xcassets */,
 				B4170B211A81B96C003BB40B /* LaunchScreen.xib */,
+				B4A382091A8A44B6007B2696 /* me.png */,
+				B4A3820A1A8A44B6007B2696 /* tracer.png */,
 				B4170B121A81B96B003BB40B /* Supporting Files */,
 			);
 			path = imagePicker;
@@ -213,7 +219,9 @@
 			files = (
 				B4170B1E1A81B96C003BB40B /* Main.storyboard in Resources */,
 				B4170B231A81B96C003BB40B /* LaunchScreen.xib in Resources */,
+				B4A3820C1A8A44B6007B2696 /* tracer.png in Resources */,
 				B4170B201A81B96C003BB40B /* Images.xcassets in Resources */,
+				B4A3820B1A8A44B6007B2696 /* me.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

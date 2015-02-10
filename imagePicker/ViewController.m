@@ -15,10 +15,6 @@
 
 @interface ViewController ()  <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *favoritelabel;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 @property (weak, nonatomic) IBOutlet UIView *previewView;
 @property (strong, nonatomic) AVPlayer *player;
 @property (strong, nonatomic) AVPlayerLayer *playerLayer;
@@ -31,7 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,21 +46,6 @@
 {
     NSURL* url = [info objectForKey:UIImagePickerControllerMediaURL]; // add for 動画のURL
     [self setupPlayer:url];
-   
-
-    // UIImagePickerControllerで選択された写真を取得する
-    self.imageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    
-    // Assets Library frameworkによって提供されるURLを取得する
-    // NSURL *url = [info objectForKey:UIImagePickerControllerReferenceURL];
-    
-    // 取得したURLを使用して、PHAssetを取得する
-    PHFetchResult *fetchResult = [PHAsset fetchAssetsWithALAssetURLs:@[url,] options:nil];
-    PHAsset *asset = fetchResult.firstObject;
-    
-    // ラベルのテキストを更新する
-    self.dateLabel.text = asset.creationDate.description;
-    self.favoritelabel.text = (asset.favorite ? @"registered Favorites" : @"not registered Favorites");
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -74,10 +54,10 @@
 - (void)setupPlayer:(NSURL *) url
 {
     // 1
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"mp4"];
-//    NSURL *url = [NSURL fileURLWithPath:path];
     self.player = [AVPlayer playerWithURL:url];
-    
+    if (self.playerLayer) {
+        [self.playerLayer removeFromSuperlayer];
+    }
     // 2
     self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
     self.playerLayer.frame = self.previewView.bounds;
@@ -104,7 +84,33 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onVideoEnd:)
+                                                 name:AVPlayerItemDidPlayToEndTimeNotification
+                                               object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:AVPlayerItemDidPlayToEndTimeNotification
+                                                  object:nil];
+}
+
+- (void)onVideoEnd:(NSNotification *)notification
+{
+    NSLog(@"video end");
+    AVPlayerItem *p = [notification object];
+    [p seekToTime:kCMTimeZero];
+    [self.player play];
+}
+
 - (IBAction)startPlaying:(id)sender {
     //    [self setupPlayer];
+    // 現状は、アクションなし
 }
 @end

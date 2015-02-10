@@ -17,7 +17,6 @@
 		B48D59BD1A84E8710082D1CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48D59BC1A84E8710082D1CF /* CoreGraphics.framework */; };
 		B48D59BF1A84E8810082D1CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48D59BE1A84E8810082D1CF /* UIKit.framework */; };
 		B48D59C11A84E88B0082D1CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48D59C01A84E88B0082D1CF /* Foundation.framework */; };
-		B48D59C31A84F7030082D1CF /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B48D59C21A84F7030082D1CF /* test.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +46,6 @@
 		B48D59BC1A84E8710082D1CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B48D59BE1A84E8810082D1CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B48D59C01A84E88B0082D1CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B48D59C21A84F7030082D1CF /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +100,6 @@
 				B4170B1C1A81B96C003BB40B /* Main.storyboard */,
 				B4170B1F1A81B96C003BB40B /* Images.xcassets */,
 				B4170B211A81B96C003BB40B /* LaunchScreen.xib */,
-				B48D59C21A84F7030082D1CF /* test.mp4 */,
 				B4170B121A81B96B003BB40B /* Supporting Files */,
 			);
 			path = imagePicker;
@@ -217,7 +214,6 @@
 				B4170B1E1A81B96C003BB40B /* Main.storyboard in Resources */,
 				B4170B231A81B96C003BB40B /* LaunchScreen.xib in Resources */,
 				B4170B201A81B96C003BB40B /* Images.xcassets in Resources */,
-				B48D59C31A84F7030082D1CF /* test.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
